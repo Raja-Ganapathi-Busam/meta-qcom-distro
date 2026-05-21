@@ -42,5 +42,8 @@ CORE_IMAGE_BASE_INSTALL += " \
 # IMSDK currently only used and tested on ARMv8 (aarch64) machines.
 CORE_IMAGE_BASE_INSTALL:append:aarch64 = " gst-plugins-imsdk-oss"
 
+# Adding libeigen-dev to enable development support on SDK
+TOOLCHAIN_TARGET_TASK:append = " libeigen-dev"
+
 # let's make sure we have a good image.
 REQUIRED_DISTRO_FEATURES += "wayland"
